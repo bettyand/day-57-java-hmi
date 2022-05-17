@@ -72,5 +72,61 @@ public class Hash {
 
         System.out.println(mattsIOU.howMuchDoIOweTo("Arthur"));
         System.out.println(mattsIOU.howMuchDoIOweTo("Michael"));
+
+        System.out.println();
+
+        // Dictionary of many translations
+        System.out.println("---Dictionary of many translations---");
+        DictionaryOfManyTranslations dictionary = new DictionaryOfManyTranslations();
+        dictionary.add("lie", "maata");
+        dictionary.add("lie", "valehdella");
+
+        dictionary.add("bow", "jousi");
+        dictionary.add("bow", "kumartaa");
+
+        System.out.println(dictionary.translate("lie"));
+        dictionary.remove("bow");
+        System.out.println(dictionary.translate("bow"));
+
+        System.out.println();
+
+        // storage facility part 1 - adding items and examining contents
+        System.out.println("---Storage facility part 1---");
+        StorageFacility facility = new StorageFacility();
+        facility.add("a14", "ice skates");
+        facility.add("a14", "ice hockey stick");
+        facility.add("a14", "ice skates");
+
+        facility.add("f156", "rollerblades");
+        facility.add("f156", "rollerblades");
+
+        facility.add("g63", "six");
+        facility.add("g63", "pi");
+
+        System.out.println(facility.contents("a14"));
+        System.out.println(facility.contents("f156"));
+
+        System.out.println();
+
+        // storage facility part 2 - listing the units and removing from unit
+        System.out.println("---Storage facility part 2---");
+        StorageFacility facility2 = new StorageFacility();
+        facility2.add("a14", "ice skates");
+        facility2.add("a14", "ice hockey stick");
+        facility2.add("a14", "ice skates");
+
+        facility2.add("f156", "rollerblades");
+        facility2.add("f156", "rollerblades");
+
+        facility2.add("g63", "six");
+        facility2.add("g63", "pi");
+
+        facility2.remove("f156", "rollerblades");
+
+        System.out.println(facility2.contents("f156"));
+
+        facility2.remove("f156", "rollerblades");
+
+        System.out.println(facility2.storageUnits());
     }
 }

@@ -1,9 +1,11 @@
 import java.util.HashMap;
 
 public class IOU {
-    private HashMap<String, Double> iouList = new HashMap<>();
+    private HashMap<String, Double> iouList;
 
-    public IOU() {}
+    public IOU() {
+        this.iouList = new HashMap<>();
+    }
 
     public void setSum(String toWhom, double amount) {
         iouList.put(toWhom, amount);
